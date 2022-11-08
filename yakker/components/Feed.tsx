@@ -1,8 +1,14 @@
 import React from "react";
 import { ArrowPathIcon } from "@heroicons/react/24/outline";
 import YakPost from "./YakPost";
+import { Yak } from "../typings";
+import ShowYaks from "./ShowYaks";
 
-const Feed = () => {
+interface Props {
+  yaks: Yak[];
+}
+
+const Feed = ({ yaks }: Props) => {
   return (
     <div className="col-span-7 lg:col-span-5 border-x">
       <div className="flex items-center justify-between">
@@ -11,6 +17,11 @@ const Feed = () => {
       </div>
       <div>
         <YakPost />
+      </div>
+      <div>
+        {yaks.map((yak) => (
+          <ShowYaks key={yak._id} yak={yak} />
+        ))}
       </div>
     </div>
   );
