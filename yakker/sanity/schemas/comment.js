@@ -11,12 +11,14 @@ export default {
     {
       name: "username",
       title: "Username",
-      type: "string",
+      type: "reference",
+      to: { type: "users" },
     },
     {
       name: "profilePic",
       title: "Profile Picture",
-      type: "string",
+      type: "reference",
+      to: { type: "users" },
     },
     {
       name: "yak",

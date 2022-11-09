@@ -14,19 +14,17 @@ export default {
       description: "ADMIN Controls: Toggle if Yak is deemed inappropriate",
       type: "boolean",
     },
-
     {
       name: "username",
       title: "Username",
-      type: "string",
+      type: "reference",
+      to: { type: "users" },
     },
     {
       name: "profilePic",
       title: "Profile Picture",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
+      type: "reference",
+      to: { type: "users" },
     },
   ],
 };

@@ -4,12 +4,11 @@ export interface Yak extends YakBody {
   _updatedAt: string;
   _rev: string;
   _type: "yak";
-  
-  blockYak: boolean;
 }
 
 export type YakBody = {
   text: string;
   username: string;
   profilePic: image;
+  blockYak: boolean;
 };
