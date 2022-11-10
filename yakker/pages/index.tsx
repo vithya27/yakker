@@ -6,6 +6,7 @@ import Sidebar from "../components/Sidebar";
 import Widgets from "../components/Widgets";
 import { fetchYaks } from "../utilities/fetchYaks";
 import { Yak } from "../typings";
+import { Toaster } from "react-hot-toast";
 
 interface Props {
   yaks: Yak[];
@@ -14,16 +15,17 @@ interface Props {
 const Home: NextPage<Props> = ({ yaks }: Props) => {
   console.log(yaks);
   return (
-    <div className="max-h-screen overflow-hidden">
+    <div className="max-h-screen overflow-y-scroll">
       <Head>
         <title>Yakker</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <Toaster />
 
       <main className="grid grid-cols-9">
         <Sidebar />
 
-        <Feed yaks={yaks}/>
+        <Feed yaks={yaks} />
 
         <Widgets />
       </main>
